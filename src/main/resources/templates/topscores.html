@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guess Game</title>
+    <link th:href="@{/topscores-stylesheet.css}" rel="stylesheet">
+</head>
+<body>
+<div class="topnav">
+    <a th:href="@{/}">Login</a>
+    <a th:href="@{/top}">Top Scores</a>
+</div>
+<h3>Top Scores!</h3>
+
+<div>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Avg score</th>
+        </tr>
+        <tr th:each="score: ${topScores}">
+            <td th:text="${score}"></td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

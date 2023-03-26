@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link th:href="@{/guesspage.css}" rel="stylesheet">
+</head>
+<body>
+<div class="topnav">
+    <a th:href="@{/}">Login</a>
+    <a th:href="@{/top}">Top Scores</a>
+</div>
+
+<div class="container">
+    <h2>Enter name to start playing</h2>
+
+    <form th:action="@{/handleSubmit}" method="post" th:object="${player}">
+        <input type="text" placeholder="Name" th:field="*{name}">
+        <input type="hidden" th:field="*{id}">
+        <input type="submit" value="Submit player">
+    </form>
+</div>
+
+</body>
+</html>
